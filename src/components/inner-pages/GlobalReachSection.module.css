@@ -1,0 +1,108 @@
+.reachSection {
+  width: 100%;
+  padding: 80px 0 120px 0;
+  background-color: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.subtitle {
+  font-family: var(--font-main), sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-family: var(--font-main), sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2em;
+}
+
+.mapContainer {
+  width: 100%;
+  background: var(--color-surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  padding: 40px;
+}
+
+.mapPlaceholder {
+  width: 100%;
+  aspect-ratio: 2/1;
+  background: 
+    radial-gradient(circle at center, rgba(0, 216, 180, 0.05) 0%, transparent 70%),
+    url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.pulse {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  opacity: 0.4;
+  animation: pulseAnim 2s infinite ease-out;
+}
+
+@keyframes pulseAnim {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+.tooltip {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #000;
+  font-family: var(--font-main), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.dot:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -40px;
+}

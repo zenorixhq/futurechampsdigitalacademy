@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Enquiry {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  phone     String?
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Project {
+  id         String   @id @default(uuid())
+  title      String
+  categories String[]
+  image      String
+  imageAlt   String?
+  order      Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model SiteImage {
+  id        String   @id @default(uuid())
+  key       String   @unique
+  url       String
+  alt       String?
+  updatedAt DateTime @updatedAt
+}
+
+model Placement {
+  id          String   @id @default(uuid())
+  studentName String
+  companyName String
+  role        String
+  image       String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Post {
+  id          String   @id @default(uuid())
+  title       String
+  slug        String   @unique
+  excerpt     String?
+  content     String
+  image       String
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  showOnHome  Boolean  @default(false)
+  homeOrder   Int      @default(0)
+}
+
+
+model Faculty {
+  id                 String   @id @default(uuid())
+  name               String
+  role               String
+  category           String
+  image              String
+  video              String?
+  experienceYears    String?
+  careerHighlights   String[]
+  teachingExperience String[]
+  order              Int      @default(0)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}

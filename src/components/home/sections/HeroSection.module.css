@@ -1,0 +1,229 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(100px, 13vh, 140px) 0 clamp(90px, 12vh, 130px);
+}
+
+/* --- Atmosphere --- */
+.grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.ghost {
+  position: absolute;
+  bottom: -0.15em;
+  left: -0.05em;
+  font-size: clamp(110px, 19vw, 300px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.07);
+  user-select: none;
+  pointer-events: none;
+  will-change: transform;
+  z-index: 0;
+}
+
+/* --- Layout --- */
+.container {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(28px, 4vw, 64px);
+}
+
+.content {
+  min-width: 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: clamp(20px, 3.5vh, 36px);
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 4.9vw, 5.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0 0 clamp(24px, 4vh, 40px);
+}
+
+.lineMask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
+}
+
+.line {
+  display: inline-block;
+  will-change: transform;
+}
+
+.lineOutline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.85);
+}
+
+.lineAccent {
+  color: var(--color-primary);
+}
+
+.charMask {
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
+}
+
+.char {
+  display: inline-block;
+  will-change: transform;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 46ch;
+}
+
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: clamp(24px, 4vh, 36px);
+}
+
+/* --- Visual: person + floating icon chips --- */
+.visual {
+  position: relative;
+  justify-self: end;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1;
+}
+
+.visualDisc {
+  position: absolute;
+  inset: 9%;
+  border-radius: 50%;
+  background: #0b1622;
+  pointer-events: none;
+}
+
+.visualRing {
+  position: absolute;
+  inset: 4%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  pointer-events: none;
+}
+
+.visualImg {
+  position: relative;
+  width: 100%;
+  height: auto;
+  -webkit-mask-image: radial-gradient(circle at 50% 46%, black 52%, transparent 72%);
+  mask-image: radial-gradient(circle at 50% 46%, black 52%, transparent 72%);
+}
+
+.chip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(46px, 4.2vw, 58px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #040a12;
+  will-change: transform;
+  z-index: 3;
+}
+
+.chip svg {
+  width: 46%;
+  height: 46%;
+}
+
+.chip1 { top: 6%; left: 2%; }
+.chip2 { top: 0%; right: 12%; }
+.chip3 { top: 38%; right: -3%; }
+.chip4 { bottom: 12%; left: -3%; }
+.chip5 { bottom: 0%; right: 8%; }
+
+.chip6 {
+  top: 56%;
+  left: 7%;
+  width: clamp(38px, 3.4vw, 48px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    justify-self: center;
+    max-width: 440px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    min-height: auto;
+    padding-top: 130px;
+  }
+
+  .title {
+    font-size: clamp(2rem, 10vw, 5rem);
+  }
+
+  .visual {
+    max-width: 340px;
+  }
+
+  .chip3 { right: 0; }
+  .chip4 { left: 0; }
+
+  .ghost {
+    font-size: 26vw;
+  }
+}

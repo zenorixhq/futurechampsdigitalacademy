@@ -1,0 +1,91 @@
+.tickerSection {
+  display: flex;
+  width: 100%;
+  background-color: var(--color-accent);
+  overflow: hidden;
+  position: relative;
+}
+
+.tickerContainer {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.marqueeWrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marqueeContent {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  width: max-content;
+  will-change: transform;
+}
+
+.tickerItem {
+  display: flex;
+  align-items: center;
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+
+.tickerIcon {
+  width: 24px;
+  height: 24px;
+  margin-left: 60px;
+  margin-right: 40px;
+  object-fit: contain;
+}
+
+.tickerText {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2em;
+  color: #000;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Moves half the width of the duplicated content */
+  }
+}
+
+/* Fallback: CSS marquee only when JS/GSAP has not taken over */
+@media (scripting: none) {
+  .marqueeContent {
+    animation: marquee 40s linear infinite;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .tickerText {
+    font-size: 30px;
+  }
+  .tickerIcon {
+    margin-left: 40px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tickerText {
+    font-size: 24px;
+  }
+  .tickerIcon {
+    margin-left: 20px;
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+  }
+  .tickerItem {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}

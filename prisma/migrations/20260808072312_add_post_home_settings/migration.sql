@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Post" ADD COLUMN     "homeOrder" INTEGER NOT NULL DEFAULT 0,
+ADD COLUMN     "showOnHome" BOOLEAN NOT NULL DEFAULT false;

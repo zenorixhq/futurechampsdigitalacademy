@@ -1,0 +1,179 @@
+/* Faculty Section */
+.facultySection {
+  width: 100%;
+  padding: clamp(60px, 10vw, 100px) 0;
+  background-color: transparent;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Header */
+.headerRow {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-main), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-accent, #00D8B4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.sectionTitle {
+  font-family: var(--font-main), sans-serif;
+  font-size: clamp(32px, 4vw, 54px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1em;
+  text-transform: uppercase;
+}
+
+/* Faculty Grid */
+.facultyGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(40px, 8vw, 80px);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Clean Editorial Faculty Block */
+.facultyCard {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.facultyHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.facultyImage {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 4/5;
+  display: flex;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.facultyImage img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  object-position: top; /* Ensures heads are not cut off */
+}
+
+.facultyName {
+  font-family: var(--font-main), sans-serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+.facultyContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.facultyContent h4 {
+  font-family: var(--font-main), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.facultyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.facultyList li {
+  font-family: var(--font-main), sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 20px;
+}
+
+.facultyList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+/* Video Showcase (Clean, No Box) */
+.videoShowcase {
+  margin-top: 100px;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.videoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.videoHeader {
+  font-family: var(--font-main), sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.fullVideo {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  outline: none;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 991px) {
+  .facultyGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+

@@ -1,0 +1,156 @@
+.contactSection {
+  width: 100%;
+  padding: clamp(80px, 10vw, 150px) 0;
+  background-color: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 40px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: clamp(60px, 8vw, 120px);
+}
+
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-family: var(--font-main);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+  letter-spacing: -1px;
+}
+
+.desc {
+  font-family: var(--font-main);
+  font-size: clamp(16px, 1.5vw, 18px);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0 0 50px 0;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.iconBox {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(0, 216, 180, 0.1);
+  color: var(--color-accent);
+  font-size: 20px;
+}
+
+.infoItem h4 {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin: 0 0 5px 0;
+}
+
+.infoItem p, .infoItem a {
+  font-family: var(--font-main);
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.infoItem a:hover {
+  color: var(--color-accent);
+}
+
+.formCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.formGroup {
+  position: relative;
+}
+
+.input, .textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 18px;
+  padding: 15px 0;
+  transition: all 0.3s ease;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-bottom-color: var(--color-accent);
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+.submitBtn {
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+.formError,
+.formSuccess {
+  font-size: 0.9rem;
+  margin: 12px 0 0;
+}
+
+.formError {
+  color: #e0806d;
+}
+
+.formSuccess {
+  color: var(--color-accent);
+}

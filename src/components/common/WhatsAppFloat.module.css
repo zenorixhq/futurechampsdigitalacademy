@@ -1,0 +1,31 @@
+.fab {
+  position: fixed;
+  right: clamp(16px, 3vw, 28px);
+  bottom: clamp(16px, 3vw, 28px);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 90;
+  transition: transform 0.3s ease;
+}
+
+.fab:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.fab svg {
+  width: 28px;
+  height: 28px;
+}
+
+@media (max-width: 768px) {
+  .fab {
+    width: 50px;
+    height: 50px;
+  }
+}

@@ -1,0 +1,110 @@
+.careerSection {
+  width: 100%;
+  padding: clamp(80px, 10vw, 150px) 0;
+  background-color: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 40px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 8vw, 100px);
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.imageCol {
+  width: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: clamp(500px, 70vh, 800px);
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.contentCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrow {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--font-main);
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 40px 0;
+  letter-spacing: -1px;
+}
+
+.careerList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.careerItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.careerItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.careerNumber {
+  font-family: var(--font-main);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.careerTitle {
+  font-family: var(--font-main);
+  font-size: clamp(20px, 3vw, 24px);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 5px 0;
+}
+
+.careerContext {
+  font-family: var(--font-main);
+  font-size: clamp(14px, 2vw, 16px);
+  color: var(--color-text-muted);
+  margin: 0;
+}

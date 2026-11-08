@@ -1,0 +1,258 @@
+.featuresSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: clamp(60px, 10vw, 120px) 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Row */
+.headerRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-bottom: 60px;
+}
+
+.titleColumn {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-main), sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2em;
+  letter-spacing: 0.2em;
+  color: var(--color-text-main);
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sectionTitle {
+  font-family: var(--font-main), sans-serif;
+  font-size: var(--font-size-display);
+  font-weight: var(--font-weight-display);
+  line-height: var(--leading-display);
+  color: var(--color-text-body);
+  margin: 0;
+}
+
+.descColumn {
+  width: 50%;
+  display: flex;
+}
+
+.description {
+  font-family: var(--font-main), sans-serif;
+  font-size: var(--font-size-body);
+  color: var(--color-text-body);
+  line-height: 1.6em;
+  margin: 0;
+}
+
+/* Portfolio Filters */
+.filterContainer {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+}
+
+.filterList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filterItem {
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-body);
+  font-family: var(--font-main), sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterItem:hover, .activeFilter {
+  background-color: var(--color-accent);
+  color: #000;
+  border-color: var(--color-accent);
+}
+
+/* Portfolio Grid */
+.portfolioGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.portfolioItem {
+  flex: 1 1 calc(50% - 15px);
+  min-width: 300px;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.portfolioImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--color-surface);
+  backdrop-filter: blur(12px);
+}
+
+.portfolioImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Grey placeholder blocks fill the frame edge-to-edge */
+.portfolioImageWrapper .portfolioImage {
+  border: none;
+  border-radius: 0;
+}
+
+.portfolioItem:hover .portfolioImage {
+  transform: scale(1.1);
+}
+
+.portfolioOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolioItem:hover .portfolioOverlay {
+  opacity: 1;
+}
+
+.portfolioCategories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.portfolioItem:hover .portfolioCategories {
+  transform: translateY(0);
+}
+
+.portfolioCategory {
+  padding: 5px 15px;
+  border-radius: 30px;
+  background-color: rgba(255,255,255,0.1);
+  color: var(--color-text-main);
+  font-size: 14px;
+}
+
+.portfolioTitle {
+  font-family: var(--font-main), sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0;
+  transform: translateY(20px);
+  transition: transform 0.3s ease 0.1s;
+}
+
+.portfolioItem:hover .portfolioTitle {
+  transform: translateY(0);
+}
+
+.portfolioArrow {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: #000;
+  transform: scale(0) rotate(-45deg);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
+}
+
+.portfolioItem:hover .portfolioArrow {
+  transform: scale(1) rotate(0deg);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  .titleColumn, .descColumn {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .featuresSection {
+    
+  }
+  .portfolioItem {
+    flex: 1 1 100%;
+  }
+  .portfolioOverlay {
+    opacity: 1; /* Always show overlay on mobile */
+  }
+  .portfolioCategories, .portfolioTitle {
+    transform: translateY(0);
+  }
+  .portfolioArrow {
+    transform: scale(1);
+    top: 20px;
+    right: 20px;
+  }
+}
+
+.sectionSubtitle::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('/assets/images/icon-sub-heading.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

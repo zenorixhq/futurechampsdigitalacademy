@@ -1,0 +1,34 @@
+.facultyIntro {
+  width: 100%;
+  padding: 100px 0 0 0;
+  background-color: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.introInfo {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-family: var(--font-main), sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2em;
+  margin-bottom: 20px;
+}
+
+.desc {
+  font-family: var(--font-main), sans-serif;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6em;
+}

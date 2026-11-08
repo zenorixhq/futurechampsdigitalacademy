@@ -1,0 +1,115 @@
+.overviewSection {
+  width: 100%;
+  padding: clamp(80px, 10vw, 150px) 0;
+  background-color: transparent;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 40px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(40px, 8vw, 100px);
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--font-main);
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 10px 0;
+  letter-spacing: -2px;
+}
+
+.desc {
+  font-family: var(--font-main);
+  font-size: clamp(16px, 1.5vw, 18px);
+  color: var(--color-text-main);
+  line-height: 1.8;
+  margin: 0 0 40px 0;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+.quote {
+  font-family: var(--font-main);
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-border-bright);
+  line-height: 1.4;
+  margin: 0;
+  padding-left: 30px;
+  border-left: 2px solid var(--color-accent);
+}
+
+.listCol {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: clamp(30px, 4vw, 50px);
+  backdrop-filter: blur(12px);
+}
+
+.listTitle {
+  font-family: var(--font-main);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 30px 0;
+  letter-spacing: -1px;
+}
+
+.practicalList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.practicalItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  font-family: var(--font-main);
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.practicalItem svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
